@@ -1,0 +1,155 @@
+<!doctype html>
+<html>
+    <head>
+        
+        <script>
+            
+            
+            function customerInfo(cName)
+            {
+                var custName = document.getElementById(cName).value;
+                document.getElementById('cust_name').innerHTML = custName;
+                
+            }
+            function customerPhone(cell)
+            {
+                var phone = document.getElementById(cell).value;
+                document.getElementById('cell_phone').innerHTML = phone;
+            }
+            
+            function customerDate(cDate)
+            {
+                var dateNeeded = document.getElementById(cDate).value;
+                document.getElementById('date_needed').innerHTML = dateNeeded;
+            }
+
+
+            function eventType(event)
+            {
+	           var event = document.getElementById(event).value;
+	           document.getElementById('event_type').innerHTML = event;
+            }
+
+            function hoursNeeded()
+            {
+                var station = document.getElementById("hours").value;
+                document.getElementById("hours_needed").innerHTML = station;
+            }
+            
+            
+        </script>
+        <title>Contact Us</title>
+        <style>
+            #footer{
+                position: absolute;
+                top: 750px;
+                
+            }
+            body{
+                margin: 0;
+            }
+            ul {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                overflow: hidden;
+                background-color: #333;
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+            }
+
+            li {
+                float: left;
+            }
+
+            li a {
+                display: block;
+                color: white;
+                text-align: center;
+                padding: 14px 25px;
+                text-decoration: none;
+            }
+
+            li a:hover:not(.active) {
+                background-color: #111;
+            }
+
+            .active {
+                background-color: #717171;
+            }
+        </style>
+    </head>
+    
+    <body style = "background-color: LightGray";>
+
+        <ul>
+          <li style = "font-family: Verdana"><a href="index.html">Home</a></li>
+          <li style = "font-family: Verdana"><a href="aboutUs.html">About Us</a></li>
+          <li style = "font-family: Verdana"><a class = "active" href="contactUs.html">Contact Us</a></li>
+        </ul>
+        
+        <form name="ContactUs" method = "post" id = "contact" enctype="text/plain" >
+
+            <h1 style = "font-family: Courier New; font-size: 70px; text-align: center;">Contact Me!</h1>
+
+            <div style=" width: 30%; float: left;">
+                <fieldset><legend>What type of event do you need help for?</legend>
+                <input type="radio" name="event" id="Wedding" value="Wedding" onclick="eventType('Wedding')">Wedding<br />
+	           <input type="radio" name="event" id="Party" value="Party" onclick="eventType('Party')">Party<br />
+		      <input type="radio" name="event" id="Family Portraits" value="Family Portraits" onclick="eventType('Family Portraits')">Family Portraits<br />
+		      <input type="radio" name="event" id="Headshots" value="Headshots" onclick="eventType('Headshots')">Headshots<br />
+                <input type="radio" name="event" id="Other" value="Other" onclick="eventType('Other')">Other<br />
+            </fieldset></div>
+            
+                <div style=" width: 30%; float: left;"><fieldset><legend>Approximate Hours Needed</legend>
+                    <select id ="hours";>
+                    <option>1-2</option>
+                    <option>3-4</option>
+                    <option>5-6</option>
+                    <option>7-10</option>
+                    <option>More Than 10</option>                         
+                    <input type ="button" onclick= "hoursNeeded()" value = "Submit" "></button></fieldset></div>
+                   </fieldset>
+                 </select>
+              </fieldset></div>
+            <br/>
+            
+            <div style= " width: 35%; float: left;">
+            <fieldset><legend>Your Information</legend>  
+            <h3>Enter the following information:</h3>
+                <label>Your Name(First and Last):<br /></label> <input type="text" name="dinername" id="dinername" size = "30" value = ""/>
+                <input type ="button" onclick="customerInfo('dinername')" value = "ok"></button>
+                <br /> 
+                <label>Phone:<br /> </label><input type="text" name="phone" id="phone" size="30" value = ""/></label>
+              <input type ="button" onclick="customerPhone('phone')" value = "ok"></button><br />
+               <label>Date Needed(MM/DD/YYYY):<br /> </label><input type="text" name="date" id="date" size="30" value = ""/></label>
+              <input type ="button" onclick="customerDate('date')" value = "ok"></button><br /></fieldset>
+            </div>
+                                                                                                   
+            </fieldset>                                                            
+           
+
+          <div style="clear:both;"></div>
+        <div ><input type="reset" value="ooops! I made a mistake. Let me start over."><br /></div>
+        <div style="width: 40%; float: left;"><h3>Your Responses:</h3>
+         <p>                                    
+        Event Type: <span  id = 'event_type'>&nbsp;</span> <br /> <br />
+        Hours Needed: <span  id = "hours_needed">&nbsp;</span> <br /><br />
+                                                
+        Your Name: <span  id = "cust_name">&nbsp;</span> <br /> <br />
+
+        Your Contact Phone: <span  id = "cell_phone">&nbsp;</span> <br /> <br />
+                                                    
+        Date Needed: <span  id = "date_needed">&nbsp;</span> <br /> <br />
+         
+        </p> </div>
+ 
+
+        </form>
+         <div id="footer">Copyright &copy; Jack Zabriskie Photography<br />
+                         
+            <a href="mailto: jackzabriskie16@gmail.com">jackzabriskie16@gmail.com</a> <br />
+             Website Made by Emily Doran</div>
+    </body>
+</html>
